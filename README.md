@@ -1,0 +1,1 @@
+# yndx-astana-demo-bot
