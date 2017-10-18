@@ -7,8 +7,8 @@ setup(
     version = '0.1',
     url = 'https://github.com/subdir/yndx-astana-demo-bot',
     packages = ['yndx_astana_demo_bot'],
-    install_requires = [
-        'python-telegram-bot',
+    requires = [
+        'python_telegram_bot',
         'requests',
         'numpy',
         'scipy',
