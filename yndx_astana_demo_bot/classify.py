@@ -3,14 +3,12 @@
 import os
 from glob import glob
 import cPickle
+
 import numpy as np
 from scipy.io.wavfile import read
 from sklearn.mixture import GMM 
-import python_speech_features as mfcc
 from sklearn import preprocessing
-import warnings
-warnings.filterwarnings("ignore")
-
+import python_speech_features as mfcc
 
 def is_male(f):
     models = []
