@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 # coding: utf-8
 
 from __future__ import print_function
@@ -14,8 +14,8 @@ import xml.etree.ElementTree as etree
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-from classify import *
-from life import life_gif
+from yndx_astana_demo_bot.classify import *
+from yndx_astana_demo_bot.life import life_gif
 
 
 telegram_token = "458834549:AAE1t-dLCmIIgv1BJA7f6oef4S9oBKf_lZg"
@@ -115,4 +115,8 @@ def main():
     finally:
         info("Exiting, please wait a few seconds...")
         updater.stop()
+
+
+if __name__ == '__main__':
+    main()
 
