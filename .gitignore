@@ -1,3 +1,5 @@
+bot.cfg
+
 # Voice recognition related files:
 voices
 *.gmm

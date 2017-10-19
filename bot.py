@@ -76,13 +76,14 @@ def voice(bot, update):
         elif text in (u"я мальчик", u"я девочка"):
             if text == u"я мальчик":
                 add_new_male_voice(tmp.name)
-                bot.send_message(chat_id=update.message.chat_id, text="Ок. Ты мальчик.")
-                bot.send_message(chat_id=update.message.chat_id, text="Всего голосов мальчиков: {}".format(len(male_voices())))
+                bot.send_message(chat_id=update.message.chat_id, text="Ок. Ты мальчик. Переобучаюсь...")
             if text == u"я девочка":
                 add_new_female_voice(tmp.name)
-                bot.send_message(chat_id=update.message.chat_id, text="Ок. Ты девочка.")
-                bot.send_message(chat_id=update.message.chat_id, text="Всего голосов девочек: {}".format(len(female_voices())))
+                bot.send_message(chat_id=update.message.chat_id, text="Ок. Ты девочка. Переобучаюсь...")
             refresh_gmm_models()
+            bot.send_message(chat_id=update.message.chat_id, text="Готово.")
+            bot.send_message(chat_id=update.message.chat_id, text="Всего голосов мальчиков: {}".format(len(male_voices())))
+            bot.send_message(chat_id=update.message.chat_id, text="Всего голосов девочек: {}".format(len(female_voices())))
 
         else:
             bot.send_message(chat_id=update.message.chat_id, text=u"Ты сказал: " + text)
