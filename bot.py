@@ -59,7 +59,7 @@ def voice(bot, update):
                 bot.send_message(
                     chat_id=update.message.chat_id,
                     text=(
-                        'Не могу отличать мальчиков от девочек. '
+                        'Я пока не умею отличать мальчиков от девочек. '
                         'Меня этому еще не научили. '
                         'Чтобы научить, нужно чтобы хотя бы одна девочка сказала мне "я девочка", '
                         'и хотя бы один мальчик сказал "я мальчик".'
@@ -75,11 +75,11 @@ def voice(bot, update):
 
         elif text in (u"я мальчик", u"я девочка"):
             if text == u"я мальчик":
-                save_wav(tmp.name, "male-{}.wav".format(os.path.basename(tmp.name)))
+                add_new_male_voice(tmp.name)
                 bot.send_message(chat_id=update.message.chat_id, text="Ок. Ты мальчик.")
                 bot.send_message(chat_id=update.message.chat_id, text="Всего голосов мальчиков: {}".format(len(male_voices())))
             if text == u"я девочка":
-                save_wav(tmp.name, "female-{}.wav".format(os.path.basename(tmp.name)))
+                add_new_female_voice(tmp.name)
                 bot.send_message(chat_id=update.message.chat_id, text="Ок. Ты девочка.")
                 bot.send_message(chat_id=update.message.chat_id, text="Всего голосов девочек: {}".format(len(female_voices())))
             refresh_gmm_models()

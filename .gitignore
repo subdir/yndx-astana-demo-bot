@@ -1,5 +1,5 @@
 # Voice recognition related files:
-*.wav
+voices
 *.gmm
 
 # Byte-compiled / optimized / DLL files

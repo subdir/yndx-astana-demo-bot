@@ -11,6 +11,9 @@ from sklearn import preprocessing
 import python_speech_features as mfcc
 
 
+VOICES_DIR = 'voices'
+
+
 def trained_models_exist():
     return os.path.exists("male.gmm") and os.path.exists("female.gmm")
 
@@ -58,6 +61,18 @@ def save_wav(ogg, wav):
     os.system("ffmpeg -i {} -c:a pcm_f32le {}".format(ogg, wav))
 
 
+def add_new_female_voice(fname):
+    if not os.path.exists(VOICES_DIR):
+        os.makedirs(VOICES_DIR)
+    save_wav(fname, VOICES_DIR + "/female-{}.wav".format(os.path.basename(fname)))
+
+
+def add_new_male_voice(fname):
+    if not os.path.exists(VOICES_DIR):
+        os.makedirs(VOICES_DIR)
+    save_wav(fname, VOICES_DIR + "/male-{}.wav".format(os.path.basename(fname)))
+
+
 def learn(files):
     features = np.asarray(());
     for f in files:
@@ -74,11 +89,11 @@ def learn(files):
 
 
 def male_voices():
-    return glob("male-voice-*.wav")
+    return glob(VOICES_DIR + "/male-*.wav")
 
 
 def female_voices():
-    return glob("female-voice-*.wav")
+    return glob(VOICES_DIR + "/female-*.wav")
 
 
 def refresh_gmm_models():
