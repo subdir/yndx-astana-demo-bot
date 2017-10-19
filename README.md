@@ -20,7 +20,7 @@ speechkit_key=<полученый ключ>
 
 ## Скачать код бота и установить зависимости:
 
-### Linux:
+### Linux (Ubuntu/Debian):
 ```sh
 apt-get install python python-pip git
 git clone https://github.com/subdir/yndx-astana-demo-bot.git
