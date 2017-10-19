@@ -85,7 +85,7 @@ def voice(bot, update):
             refresh_gmm_models()
 
         else:
-            bot.send_message(chat_id=update.message.chat_id, text=text)
+            bot.send_message(chat_id=update.message.chat_id, text=u"Ты сказал: " + text)
 
 
 def query_speechkit(filename):
