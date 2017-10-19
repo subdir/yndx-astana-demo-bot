@@ -32,7 +32,7 @@ cd yndx-astana-demo-bot
 ```
 
 ## Собрать docker-образ
-В командной строке:
+В командной строке, находясь в папке с исходниками (yndx-astana-demo-bot):
 ```sh
 docker build -t yndx-astana-demo-bot .
 ```
@@ -40,13 +40,13 @@ docker build -t yndx-astana-demo-bot .
 ## Запуск бота
 
 ### Linux
-В командной строке:
+В командной строке, находясь в папке с исходниками (yndx-astana-demo-bot):
 ```sh
 docker run --rm -ti --volume=$PWD:/yndx-astana-demo-bot yndx-astana-demo-bot
 ```
 
 ### Windows
-В командной строке:
+В командной строке, находясь в папке с исходниками (yndx-astana-demo-bot):
 ```sh
 docker run --rm -ti --volume=%cd%:/yndx-astana-demo-bot yndx-astana-demo-bot
 ```
