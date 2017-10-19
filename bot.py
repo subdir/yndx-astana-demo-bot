@@ -15,7 +15,7 @@ from ConfigParser import ConfigParser
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-from yndx_astana_demo_bot.classify import *
+from yndx_astana_demo_bot.voice_gender import *
 from yndx_astana_demo_bot.life import life_gif
 
 
