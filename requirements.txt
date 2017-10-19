@@ -1,0 +1,8 @@
+matplotlib>=2.1.0
+numpy>=1.13.3
+python-speech-features>=0.6
+python-telegram-bot>=8.1.1
+requests>=2.18.4
+scipy>=0.19.1
+seaborn>=0.8.1
+sklearn>=0.0
