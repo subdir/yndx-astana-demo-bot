@@ -9,7 +9,7 @@
 telegram_bot_token=<полученный токен>
 ```
 
-## Настроить Yandex.Speechkit для распознавания голоса
+## Настроить Yandex.SpeechKit для распознавания голоса
 
 Нужно получить ключ, следуя инструкциям, здесь: https://tech.yandex.ru/speechkit/cloud/
 
