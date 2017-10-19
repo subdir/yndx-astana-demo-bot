@@ -25,20 +25,28 @@ speechkit_key=<полученый ключ>
 - docker
 
 ## Скачать код бота
-
+В командной строке:
 ```sh
 git clone https://github.com/subdir/yndx-astana-demo-bot.git
 cd yndx-astana-demo-bot
 ```
 
 ## Собрать docker-образ
-
+В командной строке:
 ```sh
 docker build -t yndx-astana-demo-bot .
 ```
 
 ## Запуск бота
 
+### Linux
+В командной строке:
 ```sh
 docker run --rm -ti --volume=$PWD:/yndx-astana-demo-bot yndx-astana-demo-bot
+```
+
+### Windows
+В командной строке:
+```sh
+docker run --rm -ti --volume=%cd%:/yndx-astana-demo-bot yndx-astana-demo-bot
 ```
