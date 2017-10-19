@@ -10,6 +10,11 @@ from sklearn.mixture import GMM
 from sklearn import preprocessing
 import python_speech_features as mfcc
 
+import warnings
+warnings.filterwarnings('ignore', 'Class GMM is deprecated', DeprecationWarning)
+warnings.filterwarnings('ignore', 'Function distribute_covar_matrix_to_match_covariance_type is deprecated', DeprecationWarning)
+warnings.filterwarnings('ignore', 'Function log_multivariate_normal_density is deprecated', DeprecationWarning)
+
 
 VOICES_DIR = 'voices'
 
