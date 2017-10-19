@@ -18,21 +18,27 @@ telegram_bot_token=<полученый токен>
 speechkit_key=<полученый ключ>
 ```
 
-## Скачать код бота и установить зависимости:
+## Установить необходимые инструменты
 
-### Linux (Ubuntu/Debian):
+- git
+- python
+- docker
+
+## Скачать код бота
+
 ```sh
-apt-get install python python-pip git
 git clone https://github.com/subdir/yndx-astana-demo-bot.git
 cd yndx-astana-demo-bot
-apt-get install libfreetype6-dev pkg-config python-dev
-pip install -r requirements.txt
 ```
 
-### Windows:
-А вот не знаю.
+## Собрать docker-образ
 
-## Запуск
 ```sh
-python bot.py
+docker build -t yndx-astana-demo-bot .
+```
+
+## Запуск бота
+
+```sh
+docker run --rm -ti --volume=$PWD:/yndx-astana-demo-bot yndx-astana-demo-bot
 ```
