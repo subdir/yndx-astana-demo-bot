@@ -25,7 +25,7 @@ speechkit_key=<полученый ключ>
 apt-get install python python-pip git
 git clone https://github.com/subdir/yndx-astana-demo-bot.git
 cd yndx-astana-demo-bot
-apt-get install libfreetype6-dev pkg-config
+apt-get install libfreetype6-dev pkg-config python-dev
 pip install -r requirements.txt
 ```
 
