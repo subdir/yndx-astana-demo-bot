@@ -52,12 +52,23 @@ def voice(bot, update):
                 info("Sent")
 
         elif text == u"мальчик или девочка":
-            wav = "{}-test.wav".format(tmp.name)
-            save_wav(tmp.name, wav)
-            if is_male(wav):
-                bot.send_message(chat_id=update.message.chat_id, text="Мальчик.")
+            if not trained_models_exist():
+                bot.send_message(
+                    chat_id=update.message.chat_id,
+                    text=(
+                        'Не могу отличать мальчиков от девочек. '
+                        'Меня этому еще не научили. '
+                        'Чтобы научить, нужно чтобы хотя бы одна девочка сказала мне "я девочка", '
+                        'и хотя бы один мальчик сказал "я мальчик".'
+                    )
+                )
             else:
-                bot.send_message(chat_id=update.message.chat_id, text="Девочка.")
+                wav = "{}-test.wav".format(tmp.name)
+                save_wav(tmp.name, wav)
+                if is_male(wav):
+                    bot.send_message(chat_id=update.message.chat_id, text="Мальчик.")
+                else:
+                    bot.send_message(chat_id=update.message.chat_id, text="Девочка.")
 
         elif text in (u"я мальчик", u"я девочка"):
             if text == u"я мальчик":

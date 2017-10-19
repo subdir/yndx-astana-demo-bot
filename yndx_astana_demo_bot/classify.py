@@ -10,6 +10,11 @@ from sklearn.mixture import GMM
 from sklearn import preprocessing
 import python_speech_features as mfcc
 
+
+def trained_models_exist():
+    return os.path.exists("male.gmm") and os.path.exists("female.gmm")
+
+
 def is_male(f):
     models = []
     with open("male.gmm") as model:
@@ -77,10 +82,15 @@ def female_voices():
 
 
 def refresh_gmm_models():
-    with open("male.gmm", 'w') as model:
-        cPickle.dump(learn(male_voices()), model)
-    with open("female.gmm", 'w') as model:
-        cPickle.dump(learn(female_voices()), model)
+    male_voices_files = male_voices()
+    if male_voices_files:
+        with open("male.gmm", 'w') as model:
+            cPickle.dump(learn(male_voices_files), model)
+
+    female_voices_files = female_voices()
+    if female_voices_files:
+        with open("female.gmm", 'w') as model:
+            cPickle.dump(learn(female_voices_files), model)
 
 
 if __name__ == '__main__':

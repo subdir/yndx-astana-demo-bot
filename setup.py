@@ -8,14 +8,14 @@ setup(
     url = 'https://github.com/subdir/yndx-astana-demo-bot',
     packages = ['yndx_astana_demo_bot'],
     requires = [
+        'matplotlib',
+        'numpy',
+        'python_speech_features',
         'python_telegram_bot',
         'requests',
-        'numpy',
         'scipy',
-        'sklearn',
-        'python_speech_features',
         'seaborn',
-        'matplotlib'
+        'sklearn',
     ],
     scripts = [
         'bot.py'
