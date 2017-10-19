@@ -20,9 +20,9 @@ speechkit_key=<полученный ключ>
 
 ## Установить необходимые инструменты
 
-- git
-- python
-- docker
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [python](https://www.python.org/getit/)
+- [docker](https://docs.docker.com/engine/installation/)
 
 ## Скачать код бота
 В командной строке:
