@@ -10,6 +10,7 @@ import logging
 from logging import info
 from tempfile import NamedTemporaryFile
 import xml.etree.ElementTree as etree
+from ConfigParser import ConfigParser
 
 import requests
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
@@ -18,8 +19,10 @@ from yndx_astana_demo_bot.classify import *
 from yndx_astana_demo_bot.life import life_gif
 
 
-telegram_token = "458834549:AAE1t-dLCmIIgv1BJA7f6oef4S9oBKf_lZg"
-speechkit_key = "c1716921-c89f-4a01-80c0-70c4deb0d2ba"
+config = ConfigParser()
+config.read("bot.cfg")
+telegram_bot_token = config.get("main", "telegram_bot_token")
+speechkit_key = config.get("main", "speechkit_key")
 speechkit_uuid = uuid.uuid1().hex
 
 
@@ -107,7 +110,7 @@ def query_speechkit(filename):
 def main():
     logging.basicConfig(level=logging.INFO)
 
-    updater = Updater(token=telegram_token)
+    updater = Updater(token=telegram_bot_token)
     dispatcher = updater.dispatcher
     voice_handler = MessageHandler(Filters.voice, voice)
     text_handler = MessageHandler(Filters.text, text)
